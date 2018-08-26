@@ -1,0 +1,17 @@
+{
+  "name": "test-umi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dvajs": "^0.1.8",
+    "immer": "^1.5.0",
+    "umi-plugin-dva": "^0.9.1",
+    "umi-plugin-routes": "^0.1.5"
+  }
+}
