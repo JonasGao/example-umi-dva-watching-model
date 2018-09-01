@@ -4,13 +4,6 @@ import Link from 'umi/link'
 import NameInput from '../../components/NameInput';
 
 class Index extends PureComponent {
-
-  componentWillUnmount() {
-    const { dispatch } = this.props
-    console.log('index will unmount')
-    dispatch({ type: 'index/watchName' })
-  }
-
   render() {
     const { msg } = this.props
     return (
