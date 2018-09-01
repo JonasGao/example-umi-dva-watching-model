@@ -7,8 +7,8 @@ class Index extends PureComponent {
 
   componentWillUnmount() {
     const { dispatch } = this.props
-    console.log('will unmount')
-    dispatch({ type: 'index/unmount' })
+    console.log('index will unmount')
+    dispatch({ type: 'index/watchName' })
   }
 
   render() {
@@ -18,6 +18,8 @@ class Index extends PureComponent {
         <h1>{msg}</h1>
         <hr />
         <Link to="/about">About</Link>
+        &nbsp;
+        <Link to="/anothor">Anothor</Link>
         <hr />
         <NameInput />
       </div>

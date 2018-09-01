@@ -6,18 +6,18 @@ export default {
   effects: {
     watchName: [
       function* ({ take, put, select, race }) {
-        console.log('start while')
+        console.log('start index while')
         while (true) {
           const { name: latest } = yield select(state => state.g)
           const { update, unmount } = yield race({
             update: take('g/updateName'),
-            unmount: take('unmount')
+            unmount: take('watchName')
           })
-          console.log(update, unmount)
           if (unmount) {
-            console.log('unmounting')
+            console.log('index unmounting')
             return
           }
+          console.log('index taking action', update.type)
           if (update.name !== latest) {
             yield put({ type: 'updateMsg', name: update.name })
           }
@@ -29,9 +29,6 @@ export default {
   reducers: {
     updateMsg(state, { name }) {
       state.msg = `Hello, ${name}!`
-    },
-    unmount(state) {
-      state.msg = null
     }
   }
 }
