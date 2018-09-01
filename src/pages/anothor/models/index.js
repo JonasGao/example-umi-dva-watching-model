@@ -13,11 +13,11 @@ export default {
                         update: take('g/updateName'),
                         unmount: take('unmount')
                     })
-                    console.log('update action in anothor', update, unmount)
                     if (unmount) {
                         console.log('anothor unmounting')
                         return
                     }
+                    console.log('anothor taking action', update.type)
                     if (update.name !== latest) {
                         yield put({ type: 'updateMsg', name: update.name })
                     }

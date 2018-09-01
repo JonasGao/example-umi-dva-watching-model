@@ -30,5 +30,17 @@ export default {
     updateMsg(state, { name }) {
       state.msg = `Hello, ${name}!`
     }
-  }
+  },
+  subscriptions: {
+    setup({ dispatch, history }) {
+      console.log('run index subscriptions setup, listening history by "/"')
+      history.listen(function (location) {
+        if (location.pathname === '/') {
+          console.log('current in index page !')
+          dispatch({ type: 'watchName' })
+          console.log('index dispatch watchName !')
+        }
+      })
+    },
+  },
 }

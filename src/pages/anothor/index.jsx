@@ -7,8 +7,8 @@ class Index extends PureComponent {
 
     componentWillUnmount() {
         const { dispatch } = this.props
-        console.log('will unmount')
-        dispatch({ type: 'index/unmount' })
+        console.log('anothor will unmount')
+        dispatch({ type: 'anothor/unmount' })
     }
 
     render() {
