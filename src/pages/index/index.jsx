@@ -5,7 +5,7 @@ import NameInput from '../../components/NameInput';
 
 class Index extends PureComponent {
   render() {
-    const { msg } = this.props
+    const { msg, dispatch } = this.props
     return (
       <div>
         <h1>{msg}</h1>
@@ -15,6 +15,7 @@ class Index extends PureComponent {
         <Link to="/anothor">Anothor</Link>
         <hr />
         <NameInput />
+        <button onClick={ () => { dispatch({ type: 'index/fetchSomething' }) } }>call fetch</button>
       </div>
     )
   }

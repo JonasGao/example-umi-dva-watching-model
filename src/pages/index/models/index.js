@@ -25,11 +25,22 @@ export default {
         }
       },
       { type: 'watcher' }
-    ]
+    ],
+    *fetchSomething (action, { call, put }) {
+      yield put({ type: 'updateMsg', name: 'fetching!'})
+    }
   },
   reducers: {
     updateMsg(state, { name }) {
       state.msg = `Hello, ${name}!`
     }
   },
+}
+
+async function doFetchSomething() {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve('Hello, Dva!')
+    }, 3000)
+  })
 }
