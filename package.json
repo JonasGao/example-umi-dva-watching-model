@@ -2,7 +2,7 @@
   "name": "test-umi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/pages/index/index.jsx",
   "scripts": {
     "dev": "umi dev"
   },
